@@ -61,7 +61,7 @@ if max_val >= threshold:
     print(server_name)
     
     # Wait for server to load
-    time.sleep(1)
+    time.sleep(5)
     
     while True:
         # Join server button click
