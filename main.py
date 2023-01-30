@@ -51,25 +51,3 @@ if searchbox != None:
         else:
             time.sleep(2)
             print('Waiting for server to load')
-
-        
-
-
-        
-
-            
-            
-            
-            
-        
-            
-            
-            
-
-
-            
-
-
-
-    
-         
