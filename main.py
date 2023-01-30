@@ -3,6 +3,7 @@ import numpy as np
 import pyautogui 
 import time
 
+# Setup of images to be used
 mainmenu = cv.imread('mainmenu.jpg', cv.IMREAD_UNCHANGED)
 enlist = cv.imread('enlist.jpg', cv.IMREAD_UNCHANGED)
 serverlist = cv.imread('serverlist.jpg', cv.IMREAD_UNCHANGED)
@@ -14,6 +15,11 @@ min_val, max_val, min_loc, max_loc = cv.minMaxLoc(result)
 
 # Prompt for server name
 server_name = pyautogui.prompt(text='', title='Server Name or IP:PORT', default='135.181.165.173:8982')
+if server_name is None:
+    print('No server name entered. Exiting...')
+    exit()
+else:
+    print('Server name entered: %s' % server_name)
 
 print('Best match top left position: %s' % str(max_loc))
 print('Best match confidence: %s' % max_val)
