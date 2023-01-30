@@ -1,85 +1,78 @@
-import cv2 as cv 
-import numpy as np
 import pyautogui 
 import time
-
-# Setup of images to be used
-mainmenu = cv.imread('mainmenu.jpg', cv.IMREAD_UNCHANGED)
-enlist = cv.imread('enlist.jpg', cv.IMREAD_UNCHANGED)
-serverlist = cv.imread('serverlist.jpg', cv.IMREAD_UNCHANGED)
-searchbox = cv.imread('searchbox.png', cv.IMREAD_UNCHANGED)
-joinserver = cv.imread('joinserver.jpg', cv.IMREAD_UNCHANGED)
-serverfull = cv.imread('serverfull.png', cv.IMREAD_UNCHANGED)
-
-
-result = cv.matchTemplate(mainmenu, enlist, cv.TM_CCOEFF_NORMED)
-
-# Get the best match position
-min_val, max_val, min_loc, max_loc = cv.minMaxLoc(result)
+import os
 
 # Prompt for server name
-server_name = pyautogui.prompt(text='', title='Server Name or IP:PORT', default='135.181.165.173:8982')
+server_name = pyautogui.prompt(text='', title='Server Name', default='Finns Let Loose')
+time.sleep(1)
 if server_name is None:
     print('No server name entered. Exiting...')
     exit()
 else:
     print('Server name entered: %s' % server_name)
 
-print('Best match top left position: %s' % str(max_loc))
-print('Best match confidence: %s' % max_val)
+# print('Best match top left position: %s' % str(max_loc))
+# print('Best match confidence: %s' % max_val)
+time.sleep(4)
+searchbox = pyautogui.locateCenterOnScreen('searchbox.jpg', confidence=0.7)
 
-threshold = 0.8
-if max_val >= threshold:
+if searchbox != None:
     print('Found a match!')
-    
-    top_left = max_loc
-    bottom_right = (top_left[0] + enlist.shape[1], top_left[1] + enlist.shape[0])
-    
-    # cv.rectangle(mainmenu, top_left, bottom_right,
-    #              color=(0, 255, 0), thickness=2, lineType=cv.LINE_4)
-    
-    # cv.imshow('Detected', mainmenu)
-    #cv.waitKey(0)
-    pyautogui.click(top_left)
-    print('Clicked enlist button')
-    
-    # Wait for server list to load
     time.sleep(1)
+    pyautogui.moveTo(searchbox)
+    pyautogui.click(searchbox)
+    print('Clicked searchbox')
     
-    # Get server list search box coordinates
-    x, y = pyautogui.locateCenterOnScreen('searchbox.png', confidence=0.8)
-    print('Search box coordinates: %s, %s' % (x, y))
-    
-    # Click on search box
-    pyautogui.moveTo(x, y, 1)
-    pyautogui.click()
-    
+    time.sleep(1)
     # Type server name from prompt
     pyautogui.typewrite(server_name)
     pyautogui.press('enter')
-    print("Server name/ip entered:")
-    print(server_name)
+    print("Server name entered: %s" % server_name)
     
     # Wait for server to load
-    time.sleep(5)
+    #time.sleep(1)
     
-    while True:
-        # Join server button click
-        x, y = pyautogui.locateCenterOnScreen('joinserver.jpg', confidence=0.8)
-            
-        # Click on search box
-        pyautogui.moveTo(x, y, 1)
-        pyautogui.click()
-                # Wait for server to load
-        time.sleep(1)
+
         
-        # Check if server is full
-        if pyautogui.locateOnScreen('serverfull.png', confidence=0.8) is not None:
-            print('Server is full. Trying again...')
-            pyautogui.press('esc')
+
+    # Click server
+    while True:
+        joinserver = pyautogui.locateCenterOnScreen('joinserver.jpg', confidence=0.7)
+        serverfull = pyautogui.locateCenterOnScreen('ok.jpg', confidence=0.9)
+        ingame = pyautogui.locateCenterOnScreen('ingame.jpg', confidence=0.7)
+        if ingame != None:
+            print('you are now connected to the server, good luck killing some finns')
+            #send messenger message
             
+            break
+        elif joinserver != None:
+            pyautogui.moveTo(joinserver)
+            pyautogui.click(joinserver)
+            print('Clicked join server')
+        elif serverfull != None:
+            pyautogui.moveTo(serverfull)
+            pyautogui.click(serverfull)
+            print('Server is full')
+
         else:
-            print('Successfully joined server!')
+            print('Waiting for server to load')
+            time.sleep(1)
+
+        
+
+
+        
+
+            
+            
+            
+            
+        
+            
+            
+            
+
+
             
 
 
