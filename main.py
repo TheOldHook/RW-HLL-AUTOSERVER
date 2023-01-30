@@ -7,6 +7,10 @@ import time
 mainmenu = cv.imread('mainmenu.jpg', cv.IMREAD_UNCHANGED)
 enlist = cv.imread('enlist.jpg', cv.IMREAD_UNCHANGED)
 serverlist = cv.imread('serverlist.jpg', cv.IMREAD_UNCHANGED)
+searchbox = cv.imread('searchbox.png', cv.IMREAD_UNCHANGED)
+joinserver = cv.imread('joinserver.jpg', cv.IMREAD_UNCHANGED)
+serverfull = cv.imread('serverfull.png', cv.IMREAD_UNCHANGED)
+
 
 result = cv.matchTemplate(mainmenu, enlist, cv.TM_CCOEFF_NORMED)
 
