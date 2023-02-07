@@ -1,11 +1,22 @@
-# RW-HLL-AUTOSERVER
+ _________            .__                                           
+/   _____/ ___________|__| _____   __________ __ _________ __  ___ 
+\_____  \_/ __ \_  __ \  |/     \_/ __ \_  __ <  |  \_  __ \  \/  / 
+/        \  ___/|  | \/  |  Y Y  \  ___/|  | \/  |  /|  | \/  /   \ 
+/_______  /\___  >__|  |__|__|_|  /\___  >__|  |____/ |__|  |____|_  /
+        \/     \/                  \/     \/                           \/ 
 
-Sick and tired of spamming join server to enter the queue? 👋🏾
-I present you the Hell Let Loose automatic game joiner. 
+# RW-HLL-AUTOSERVER 🔥🎮
 
-Got annoyed by the queue system so decided to make a script that automaticly joins while i'm eating dinner or doing other stuff. 
+Tired of the hassle of constantly joining Hell Let Loose servers? Say goodbye to the queue and hello to more gaming time with RW-HLL-AUTOSERVER! 💻
 
-Install this module for it to work:
-```pip install pyautogui```
+This script automates the process of joining the server of your choice, freeing you up to enjoy a meal, take a break, or even sleep! 
 
-You will get prompted when launching the script, fill in the server name of your choice and it will automaticly fill into the ingame searchfilter.
+## Installation 
+
+To get started, simply run `pip install pyautogui` to install the required module. 
+
+## Usage
+
+Once installed, launch the script and fill in the server name of your choice. The script will automatically fill in the in-game search filter, making it easier than ever to jump into the game! 🚀
+
+No more frustration with the queue system. With RW-HLL-AUTOSERVER, you can get right into the action. So what are you waiting for? Install now and let the fun begin! 🎉
