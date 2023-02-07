@@ -1,10 +1,3 @@
- _________            .__                                           
-/   _____/ ___________|__| _____   __________ __ _________ __  ___ 
-\_____  \_/ __ \_  __ \  |/     \_/ __ \_  __ <  |  \_  __ \  \/  / 
-/        \  ___/|  | \/  |  Y Y  \  ___/|  | \/  |  /|  | \/  /   \ 
-/_______  /\___  >__|  |__|__|_|  /\___  >__|  |____/ |__|  |____|_  /
-        \/     \/                  \/     \/                           \/ 
-
 # RW-HLL-AUTOSERVER 🔥🎮
 
 Tired of the hassle of constantly joining Hell Let Loose servers? Say goodbye to the queue and hello to more gaming time with RW-HLL-AUTOSERVER! 💻
